@@ -1,6 +1,6 @@
-import {hi} from './m.js'
+// import {hi} from './m.js'
 let a = 10
-console.log(hi);
+// console.log(hi);
 // document.getElementById('test') 
 console.log(a);
 
