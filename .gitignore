@@ -5,6 +5,8 @@
 /part3/node_modules
 /01_HelloTs/part3/node_modules
 /01_HelloTs/part3/dist
+/chapter02/part2/node_modules
+/chapter02/part2/dist
 /.pnp
 .pnp.js
 
