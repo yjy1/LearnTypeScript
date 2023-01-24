@@ -13,7 +13,7 @@ class GameController {
     constructor() {
         this.snake = new Snake()
         this.food = new Food()
-        this.scorePanel = new ScorePanel()
+        this.scorePanel = new ScorePanel(10,2)
         this.init()
     }
     // 游戏的初始化方法，调用后游戏即开始
@@ -82,8 +82,8 @@ class GameController {
             alert(error + 'Game Over')
             this.isLive = false
         }
-
-       this.isLive && setTimeout( this.run.bind(this), 300 - (this.scorePanel.level - 1) *30);
+      
+       this.isLive && setTimeout( this.run.bind(this), 3000 - (this.scorePanel.level - 1) *30);
     }
     // 定义一个方法，用来检查蛇是否吃到食物
     checkEat(X:number,Y:number){
@@ -96,5 +96,6 @@ class GameController {
           this.snake.addBody()
        }
     }
+   
 }
 export default GameController
