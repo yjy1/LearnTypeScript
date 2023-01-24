@@ -72,11 +72,29 @@ class GameController {
             default:
                 break
         }
+        // 检查蛇是否吃到了食物
+        this.checkEat(this.snake.X,this.snake.Y)
 
-        this.snake.X = X
-        this.snake.Y = Y
+        try {
+            this.snake.X = X
+            this.snake.Y = Y
+        } catch (error) {
+            alert(error + 'Game Over')
+            this.isLive = false
+        }
 
        this.isLive && setTimeout( this.run.bind(this), 300 - (this.scorePanel.level - 1) *30);
+    }
+    // 定义一个方法，用来检查蛇是否吃到食物
+    checkEat(X:number,Y:number){
+       if( X === this.food.X && Y === this.food.Y){
+          // 食物的位置要进行重置
+          this.food.change()
+          // 分数增加
+          this.scorePanel.addScore()
+          // 蛇要增加一节
+          this.snake.addBody()
+       }
     }
 }
 export default GameController
